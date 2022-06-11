@@ -83,4 +83,7 @@ export class CasesController {
   async getText() {
     return await stateWise();
   }
+  @Get("/") helloWorld() {
+    return "Hello World";
+  }
 }
