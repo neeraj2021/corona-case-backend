@@ -8,6 +8,9 @@
     "serve": "nodemon app.ts",
     "tsc": "tsc"
   },
+  "engines": {
+    "node": "16.14.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

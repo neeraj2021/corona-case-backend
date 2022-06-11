@@ -9,7 +9,9 @@ const app = createExpressServer({
   controllers: [UserController, CasesController], // we specify controllers we want to use
 });
 
+const PORT = process.env.PORT || 8000;
+
 // run express application on port 8000
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log("Running....");
 });
