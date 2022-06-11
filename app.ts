@@ -2,8 +2,12 @@
 import { createExpressServer } from "routing-controllers";
 import { UserController } from "./UserController";
 import { CasesController } from "./CasesControlller";
-import cors from "cors";
+import { EventEmitter } from "events";
 // creates express app, registers all controller routes and returns you express app instance
+
+const emitter = new EventEmitter();
+emitter.setMaxListeners(100);
+
 const app = createExpressServer({
   cors: true,
   controllers: [UserController, CasesController], // we specify controllers we want to use
