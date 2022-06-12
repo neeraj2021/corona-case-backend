@@ -17,5 +17,5 @@ const PORT = process.env.PORT || 8000;
 
 // run express application on port 8000
 app.listen(PORT, () => {
-  console.log("Running....");
+  console.log("Running.... on port ", PORT);
 });

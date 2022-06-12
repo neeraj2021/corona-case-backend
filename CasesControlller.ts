@@ -84,6 +84,6 @@ export class CasesController {
     return await stateWise();
   }
   @Get("/") helloWorld() {
-    return "Hello World";
+    return { message: "Hello World" };
   }
 }
