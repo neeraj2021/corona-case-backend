@@ -2,12 +2,13 @@
   "name": "corona-case-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "ts-node app.js",
-    "start": "node dist/app.js",
-    "build": "tsc"
+    "serve": "ts-node index.ts",
+    "build": "rimraf ./build",
+    "start": "node dist/index.js",
+    "tsc": "tsc"
   },
   "engines": {
     "node": "16.14.0"

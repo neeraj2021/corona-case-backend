@@ -28,7 +28,11 @@ const puppeteer_1 = __importDefault(require("puppeteer"));
 function getCountryData() {
     var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
-        const browser = yield puppeteer_1.default.launch();
+        const browser = yield puppeteer_1.default.launch({
+            headless: true,
+            args: ["--no-sandbox"],
+            ignoreDefaultArgs: ["--disable-extensions"],
+        });
         const page = yield browser.newPage();
         yield page.goto("https://www.mohfw.gov.in/");
         const countryTodayData = yield page.$$eval("#site-dashboard > div > div > div:nth-child(1) > div.col-xs-8.site-stats-count > ul > li > span", (pt) => {
@@ -48,7 +52,11 @@ function getCountryData() {
 }
 function stateWise() {
     return __awaiter(this, void 0, void 0, function* () {
-        const browser = yield puppeteer_1.default.launch();
+        const browser = yield puppeteer_1.default.launch({
+            headless: true,
+            args: ["--no-sandbox"],
+            ignoreDefaultArgs: ["--disable-extensions"],
+        });
         const page = yield browser.newPage();
         yield page.goto("https://www.mohfw.gov.in/");
         const stateWiseData = yield page.$$eval("#state-data > div > div > div > div > table > tbody > tr > td", (pt) => {
@@ -96,7 +104,7 @@ let CasesController = class CasesController {
         });
     }
     helloWorld() {
-        return { message: "Hello World" };
+        return { message: "Hello World! ✔" };
     }
 };
 __decorate([

@@ -1,6 +1,5 @@
 // this shim is required
 import { createExpressServer } from "routing-controllers";
-import { UserController } from "./UserController";
 import { CasesController } from "./CasesControlller";
 import { EventEmitter } from "events";
 // creates express app, registers all controller routes and returns you express app instance
@@ -10,7 +9,7 @@ emitter.setMaxListeners(100);
 
 const app = createExpressServer({
   cors: true,
-  controllers: [UserController, CasesController], // we specify controllers we want to use
+  controllers: [CasesController], // we specify controllers we want to use
 });
 
 const PORT = process.env.PORT || 8000;

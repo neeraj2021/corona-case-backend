@@ -4,7 +4,11 @@ import Puppeteer from "puppeteer";
 import fs from "fs";
 
 async function getCountryData() {
-  const browser = await Puppeteer.launch();
+  const browser = await Puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox"],
+    ignoreDefaultArgs: ["--disable-extensions"],
+  });
 
   const page = await browser.newPage();
   await page.goto("https://www.mohfw.gov.in/");
@@ -30,7 +34,11 @@ async function getCountryData() {
 }
 
 async function stateWise() {
-  const browser = await Puppeteer.launch();
+  const browser = await Puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox"],
+    ignoreDefaultArgs: ["--disable-extensions"],
+  });
 
   const page = await browser.newPage();
   await page.goto("https://www.mohfw.gov.in/");
@@ -84,6 +92,6 @@ export class CasesController {
     return await stateWise();
   }
   @Get("/") helloWorld() {
-    return { message: "Hello World" };
+    return { message: "Hello World! ✔" };
   }
 }
