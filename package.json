@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "ts-node app.ts",
-    "tsc": "tsc"
+    "start": "node dist/app.js",
+    "build": "tsc"
   },
   "engines": {
     "node": "16.14.0"
