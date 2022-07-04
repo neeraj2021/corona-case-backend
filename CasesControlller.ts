@@ -85,7 +85,7 @@ async function stateWise() {
 export class CasesController {
   @Get("/country")
   async getAll() {
-    return getCountryData();
+    return await getCountryData();
   }
   @Get("/state")
   async getText() {
